@@ -60,7 +60,7 @@ const showProductDetails = (product_id) => {
 };
 
 const showProductDetailsInModal = (product_details) => {
-   console.log(product_details);
+   // console.log(product_details);
    setInnerText('exampleModalLabel', product_details.title);
    setInnerText('productId', product_details.id);
    setInnerText('modal_body', product_details.description);
@@ -130,6 +130,11 @@ document.getElementById("search-btn").addEventListener("click", function () {
       (p.title.toLowerCase().includes(inputField.toLowerCase()))
    );
    showProducts(searchedProduct);
- });
-
+});
+ 
+// document.getElementById('input-value').addEventListener('keypress', function (e) {
+//    if (e.key === 'Enter') {
+//       showProducts();
+//    }
+// });
 
