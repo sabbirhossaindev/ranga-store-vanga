@@ -14,7 +14,7 @@ loadProducts('https://fakestoreapi.com/products');
 // show all product in UI
 const showProducts = (products) => {
    
-   setInnerText('total_products', products.length);
+   setInnerText('total_products', products.length); /// jjkhjgh
 
    document.getElementById("all-products").innerHTML = "";
 
@@ -125,8 +125,9 @@ const updateTotal = () => {
 // search by category
 document.getElementById("search-btn").addEventListener("click", function () {
    const inputField = document.getElementById("input-value").value;
-   const searchedProduct = arr.filter(p =>
-      p.title.toLowerCase().inCludes(inputField.toLowerCase())
+   console.log(inputField, arr)
+   const searchedProduct = arr[0].filter(p =>
+      (p.title.toLowerCase().includes(inputField.toLowerCase()))
    );
    showProducts(searchedProduct);
  });
