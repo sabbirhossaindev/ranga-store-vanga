@@ -69,7 +69,7 @@ const showProductDetailsInModal = (product_details) => {
 
 const getInputValue = (id) => {
    const element = document.getElementById(id).innerText;
-   const converted = parseInt(element);
+   const converted = parseFloat(element);
    return converted;
 };
 
@@ -125,8 +125,8 @@ const updateTotal = () => {
 // search by category
 document.getElementById("search-btn").addEventListener("click", function () {
    const inputField = document.getElementById("input-value").value;
-   const searchedProduct = arr[0].find((p) =>
-     p.category.startsWith(`${inputField}`)
+   const searchedProduct = arr.filter(p =>
+      p.title.toLowerCase().inCludes(inputField.toLowerCase())
    );
    showProducts(searchedProduct);
  });
